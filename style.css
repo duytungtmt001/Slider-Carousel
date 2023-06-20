@@ -1,0 +1,139 @@
+:root {
+    --slide-width: 700px;
+    --wrapper-width: 8400px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.box {
+    overflow: hidden;
+    height: 100vh;
+    background-color: #030612;
+}
+
+.slider-wrapper {
+    margin-top: 50px;
+    height: 450px;
+    position: relative;
+}
+
+.slider {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: var(--slide-width);
+}
+
+.wrapper {
+    position: absolute;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: var(--wrapper-width);
+}
+
+
+.slide {
+    height: 100%;
+    width: var(--slide-width);
+    display: flex;
+    align-items: center;
+}
+
+.wrap-item {
+    opacity: 0.6;
+    margin: 0 40px;
+    position: relative;
+    transition: all ease-out .5s;
+}
+
+.slide-active .wrap-item {
+    opacity: 1;
+    margin: 0 -20px;
+}
+
+.slide-active .slide-image {
+    box-shadow: 0 0 140px 0 hsla(0, 0%, 100%, .3), 0 0 10px 0 hsla(0, 0%, 100%, .2);
+}
+
+.slide-image {
+    width: 100%;
+    user-select: none;
+    border-radius: 20px;
+}
+
+
+h1 {
+    color: #fff;
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    user-select: none;
+}
+
+/* Button */
+
+span {
+    padding: 12px 16px;
+    border-radius: 50%;
+    background-color: #ececec;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    transition: all ease-out .2s;
+}
+
+span:hover {
+    opacity: 1;
+}
+
+.prev {
+    left: 0;
+} 
+
+.next {
+    right: 0;
+}
+
+/* Slide dots */
+.slide-dots {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dot {
+    padding: 6px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 3px;
+    background-color: #9b9b9b;
+    transition: all ease-out .3s;
+    width: 10px;
+}
+
+.dot.active {
+    width: 40px;
+    background-color: #ebebeb;
+}
+
+
+
+
